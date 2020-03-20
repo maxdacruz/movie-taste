@@ -1,0 +1,42 @@
+<app-nav-bar></app-nav-bar>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <hr />
+      </div>
+      <div class="col s4 ">
+        <img src="{{ myurl }}" />
+      </div>
+
+      <div class="col s8 ">
+        <span class="flow-text"> Realese Year: {{ myMovieDetails.Year }}</span
+        ><br />
+        <span class="flow-text"> Director: {{ myMovieDetails.Director }}</span
+        ><br />
+        <span class="flow-text"> Synopsis: {{ myMovieDetails.Plot }}</span
+        ><br />
+
+        <span class="flow-text">
+          Metascore: {{ myMovieDetails.Metascore }} </span
+        ><br />
+        <span class="flow-text">
+          Genre:
+          <div *ngFor="let Genre of myGenres" class="chip">
+            {{ Genre }}
+          </div></span
+        >
+        <hr />
+      </div>
+
+      <div class="col s6">
+        <h3>Your rating</h3>
+        <p> {{myMovieDetails.imdbRating}} </p>
+        <p class="range-field">
+          <input [(ngModel)]="myMovieDetails.imdbRating" type="range" id="test5" min="0" max="10" />
+        </p>
+      </div>
+    </div>
+  </div>
+</body>

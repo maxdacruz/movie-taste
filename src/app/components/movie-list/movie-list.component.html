@@ -1,0 +1,23 @@
+<app-nav-bar></app-nav-bar>
+
+
+<div class="row">
+  <div *ngFor="let item of myMovies" class="col s6 m3">
+    <div [routerLink]="['/movie-details', item.imdbID]" class="card">
+      <div class="card-image">
+        <img src="{{ item.Images }}" />
+      </div>
+      <div class="card-content">
+        <span class="card-title">{{ item.Title | uppercase }}</span>
+        <hr>
+        <p>
+          Staring: {{item.Actors}}
+        </p>
+        <br>
+        <p>
+          Your rating : {{item.imdbRating}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
